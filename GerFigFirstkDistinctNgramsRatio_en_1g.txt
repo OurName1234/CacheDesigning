@@ -1,0 +1,35 @@
+set terminal postscript eps enhanced color "Helvetica" 14
+set output "FirsKDistincNgramsRatio_en_1g.eps"
+
+# Set axis labels
+set xlabel "corpus size {/Italic ln(C)}"
+set ylabel "ratio of 1-grams occurring < k times {/Italic W(<k,C;'en',k) / D(1,C;'en',1)}"
+
+set key spacing 1.35
+set key at graph 0.75, 0.65
+
+set linetype 1 lc rgb '#1f77b4'   # Blue
+set linetype 2 lc rgb '#ff7f0e'   # Orange
+set linetype 3 lc rgb '#2ca02c'   # Green
+set linetype 4 lc rgb '#d62728'   # Red
+set linetype 5 lc rgb '#9467bd'   # Purple
+set linetype 6 lc rgb '#8c564b'   # Brown
+set linetype 7 lc rgb '#e377c2'   # Pink
+set linetype 8 lc rgb '#7f7f7f'   # Gray
+set linetype 9 lc rgb '#17becf'   # Cyan
+set linetype 10 lc rgb '#a55194'   # Violet
+set linetype 11 lc rgb '#393b79'   # Dark Blue
+set linetype 12 lc rgb '#6baed6'   # Light Blue
+set linetype 13 lc rgb '#bcbd22'   # Olive Green
+set linetype 14 lc rgb '#636363'   # Dark Gray
+set linetype 15 lc rgb '#8dd3c7'   # Teal
+
+plot \
+"FirstDkRatioForCorpora_Pred_2_en_1" with lines ls 1 title "{/Italic W(<2,C;'en',1) / D(1,C;'en',1) vs ln(C)}",\
+ "FirstDkRatioForCorpora_Emp_2_en_1" with points lt 2 title "{/Italic W_{emp}(<2,C;'en',1) / D_{emp}(1,C;'en',1) vs ln(C)}",\
+"FirstDkRatioForCorpora_Pred_4_en_1" with lines lt 3 title "{/Italic W(<4,C;'en',1) / D(1,C;'en',1) vs ln(C)}",\
+ "FirstDkRatioForCorpora_Emp_4_en_1" with points lt 4 title "{/Italic W_{emp}(<4,C;'en',1) / D_{emp}(1,C;'en',1) vs ln(C)}",\
+"FirstDkRatioForCorpora_Pred_8_en_1" with lines lt 5 title "{/Italic W(<8,C;'en',1) / D(1,C;'en',1) vs ln(C)}",\
+ "FirstDkRatioForCorpora_Emp_8_en_1" with points lt 6 title "{/Italic W_{emp}(<8,C;'en',1) / D_{emp}(1,C;'en',1) vs ln(C)}",\
+"FirstDkRatioForCorpora_Pred_16_en_1" with lines lt 7 title "{/Italic W(<16,C;'en',1) / D(1,C;'en',1) vs ln(C)}",\
+ "FirstDkRatioForCorpora_Emp_16_en_1" with points lt 8 title "{/Italic W_{emp}(<16,C;'en',1) / D_{emp}(1,C;'en',1) vs ln(C)}"

@@ -1,0 +1,36 @@
+set terminal postscript eps enhanced color "Helvetica" 14
+set output "LocalMaxEvolForFindBestCacheVsHitRatioPointForCorpusSize_en_4e10_1_1.eps"
+
+# Set axis labels
+set xlabel "global cache size {/Italic GC(4e10,{/Bold m};'en',6)}"
+set ylabel "hit ratio {/Italic HR(4e10,{/Bold m};'en',6)}"
+
+set key spacing  1.35
+set key at graph 0.65, 0.9
+
+set arrow from 19626377688.210133,0.65 to 19626377688.210133,0.924999999999941 nohead dashtype 2 linewidth 2
+
+set arrow from 5000000000,0.924999999999941 to 19626377688.210133,0.924999999999941 nohead dashtype 2 linewidth 2
+
+set arrow from 23000000000,0.7 to 19626377688.210133,0.65 head filled size screen 0.02,15
+set label "{/Italic CEMP}" at 23000000000,0.7 offset 1,1
+
+set linetype 1 lc rgb '#1f77b4'   # Blue
+set linetype 2 lc rgb '#ff7f0e'   # Orange
+set linetype 3 lc rgb '#2ca02c'   # Green
+set linetype 4 lc rgb '#d62728'   # Red
+set linetype 5 lc rgb '#9467bd'   # Purple
+set linetype 6 lc rgb '#8c564b'   # Brown
+set linetype 7 lc rgb '#e377c2'   # Pink
+set linetype 8 lc rgb '#7f7f7f'   # Gray
+set linetype 9 lc rgb '#17becf'   # Cyan
+set linetype 10 lc rgb '#a55194'   # Violet
+set linetype 11 lc rgb '#393b79'   # Dark Blue
+set linetype 12 lc rgb '#6baed6'   # Light Blue
+set linetype 13 lc rgb '#bcbd22'   # Olive Green
+set linetype 14 lc rgb '#636363'   # Dark Gray
+set linetype 15 lc rgb '#8dd3c7'   # Teal
+
+plot \
+"LocalMaxEvolForFindBestCacheVsHitRatioPointForCorpusSize_en_40000000000.0_1_1" with lines ls 1 title "",\
+ "LocalMaxFindBestCacheVsHitRatioPointForCorpusSize_en_40000000000.0_1_1" with points lt 2 title ""

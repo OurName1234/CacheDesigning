@@ -1,0 +1,37 @@
+set terminal postscript eps enhanced color "Helvetica" 14
+set output "LocMaxPercentCacheForHitRatioVsCorpusSize_en_WithOutBloomF.eps"
+
+# Set axis labels
+set xlabel "{corpus} size {/Italic C}"
+set ylabel "ratio of global cache size {/Italic wrt FullCache} {/Italic GC(C,{/Bold m};'en',6) / FullCache}"
+
+set linetype 1 lc rgb '#1f77b4'   # Blue
+set linetype 2 lc rgb '#ff7f0e'   # Orange
+set linetype 3 lc rgb '#2ca02c'   # Green
+set linetype 4 lc rgb '#d62728'   # Red
+set linetype 5 lc rgb '#9467bd'   # Purple
+set linetype 6 lc rgb '#8c564b'   # Brown
+set linetype 7 lc rgb '#e377c2'   # Pink
+set linetype 8 lc rgb '#7f7f7f'   # Gray
+set linetype 9 lc rgb '#17becf'   # Cyan
+set linetype 10 lc rgb '#a55194'   # Violet
+set linetype 11 lc rgb '#393b79'   # Dark Blue
+set linetype 12 lc rgb '#6baed6'   # Light Blue
+set linetype 13 lc rgb '#bcbd22'   # Olive Green
+set linetype 14 lc rgb '#636363'   # Dark Gray
+set linetype 15 lc rgb '#8dd3c7'   # Teal
+
+set key spacing 1.4
+set key at graph 0.9, 0.6
+
+plot \
+"LocMaxPercentCacheForHitRatioVsCorpusSize_en_0.75_1" with lines ls 1 title "{/Italic GC(C,{/Bold m};'en',6) / FullCache vs C} for {/Italic HR(C,{/Bold m};'en',6) = 0.75}",\
+"EmpLocMaxPercentCacheForHitRatioVsCorpusSize_en_0.75_1" with points ls 2 title "{/Italic GC_{emp}(C,{/Bold m};'en',6) / FullCache_{emp} vs C} for {/Italic HR(C,{/Bold m};'en',6) = 0.75}",\
+"LocMaxPercentCacheForHitRatioVsCorpusSize_en_0.85_1" with lines ls 3 title "{/Italic GC(C,{/Bold m};'en',6) / FullCache vs C} for {/Italic HR(C,{/Bold m};'en',6) = 0.85}",\
+"EmpLocMaxPercentCacheForHitRatioVsCorpusSize_en_0.85_1" with points ls 4 title "{/Italic GC_{emp}(C,{/Bold m};'en',6) / FullCache_{emp} vs C} for {/Italic HR(C,{/Bold m};'en',6) = 0.85}",\
+"LocMaxPercentCacheForHitRatioVsCorpusSize_en_0.95_1" with lines ls 5 title "{/Italic GC(C,{/Bold m};'en',6) / FullCache vs C} for {/Italic HR(C,{/Bold m};'en',6) = 0.95}",\
+"EmpLocMaxPercentCacheForHitRatioVsCorpusSize_en_0.95_1" with points ls 6 title "{/Italic GC_{emp}(C,{/Bold m};'en',6) / FullCache_{emp} vs C} for {/Italic HR(C,{/Bold m};'en',6) = 0.95}",\
+"LocMaxPercentCacheForHitRatioVsCorpusSize_en_0.99_1" with lines ls 7 title "{/Italic GC(C,{/Bold m};'en',6) / FullCache vs C} for {/Italic HR(C,{/Bold m};'en',6) = 0.99}",\
+"EmpLocMaxPercentCacheForHitRatioVsCorpusSize_en_0.99_1" with points ls 8 title "{/Italic GC_{emp}(C,{/Bold m};'en',6) / FullCache_{emp} vs C} for {/Italic HR(C,{/Bold m};'en',6) = 0.99}"
+
+
